@@ -3,9 +3,6 @@ package HomeWork1.server;
 
 import HomeWork1.client.ClientController;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,8 +26,6 @@ public class ServerController {
     public void setRepo(Repository repository){
         this.repository = repository;
     }
-
-    // добавил вывод переписки в оба чата, что бы на сервер можно было не смотреть и все работало как чат
     public void message(String text) {
         if (!work) {
             return;

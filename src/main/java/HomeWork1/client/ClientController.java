@@ -13,14 +13,6 @@ public class ClientController {
         this.server = server;
         clientView.setClientController(this);
     }
-
-    public void setClientView(ClientView clientView) {
-        this.clientView = clientView;
-    }
-    public void setServer(ServerController server) {
-        this.server = server;
-    }
-
     public void disconnectFromServer() {
         server.disconnectUserFromServer(this);
     }

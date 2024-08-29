@@ -4,11 +4,6 @@ package HomeWork1.server;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.util.ArrayList;
-import java.util.List;
 import javax.swing.*;
 import java.awt.*;
 
@@ -26,8 +21,6 @@ public class ServerGUI extends JFrame implements ServerView{
         settings();
 
         createLog();
-        /*add(createLog());
-        add(createButtonsPanel(), BorderLayout.SOUTH);*/
         setVisible(true);
     }
 

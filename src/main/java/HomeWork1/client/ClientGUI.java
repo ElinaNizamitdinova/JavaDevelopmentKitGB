@@ -11,8 +11,6 @@ public class ClientGUI extends JFrame implements ClientView{
     public static final int WIDTH = 800;
     public static final int HEIGHT = 600;
 
-    private ServerGUI server;
-
     JTextArea log;
     JTextField IPAdress, PortAdress, login, message;
     JPasswordField password;
@@ -26,7 +24,9 @@ public class ClientGUI extends JFrame implements ClientView{
 
     public ClientGUI() {
         settings();
-        createPanel();
+        add(createHeader(), BorderLayout.NORTH);
+        add(createLog());
+        add(createFooter(), BorderLayout.SOUTH);
 
         setVisible(true);
     }
@@ -43,11 +43,6 @@ public class ClientGUI extends JFrame implements ClientView{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    private void createPanel() {
-        add(createHeader(), BorderLayout.NORTH);
-        add(createLog());
-        add(createFooter(), BorderLayout.SOUTH);
-    }
 
     private Component createHeader() {
         header = new JPanel(new GridLayout(2, 3));
@@ -89,7 +84,7 @@ public class ClientGUI extends JFrame implements ClientView{
         footer = new JPanel(new GridLayout(1, 2));
 
         message = new JTextField();
-        send = new JButton("Send");
+        send = new JButton("Отправить");
 
         send.addActionListener(new ActionListener() {
             @Override
@@ -110,7 +105,7 @@ public class ClientGUI extends JFrame implements ClientView{
         }
     }
 
-    @Override
+   @Override
     public void showMessage(String message) {
         log.append(message + "\n");
     }
